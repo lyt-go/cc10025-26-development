@@ -14,6 +14,10 @@ export type ModuleMeta = {
   entity: string
   desc: string
   fields: string[]
+  /** 登记表单字段；缺省时按 fields 全量登记。受理时间、凭据等由流程写入的字段不应放在这里。 */
+  createFields?: string[]
+  /** 登记时必须填写的字段；缺省时按 createFields 全量必填。 */
+  requiredFields?: string[]
   statuses: string[]
   actions: string[]
   actionTargets: Record<string, string>
